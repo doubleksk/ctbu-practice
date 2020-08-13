@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>豆瓣同城_重庆</title>
+		<script type="text/javascript">
+			var imgArr=["img/11.png","img/22.png"];
+			var index=0;//记录当前显示图片的下标
+			window.onload=function(){
+				//获取所有的按钮
+				var btns=document.getElementsByTagName("input");
+					btns[1].onclick=function(){
+					var img=document.getElementById("img_1");
+					if(index==1){
+						index=0;
+					}else{
+						index++;
+					}
+					img.src=imgArr[index];
+				}
+				btns[2].onclick=function(){
+					var img=document.getElementById("img_1");
+					if(index==1){
+						index=0;
+					}else{
+						index++;
+					}
+					img.src=imgArr[index];
+				}
+				}
+		</script>
+		<style>
+			*{margin:0;padding:0;}
+			a:hover{font-weight: 100;}
+			li{
+				list-style-type: none;
+				padding: 1px;
+				color:  steelblue;
+				float: left;
+				
+			}
+			.top3{
+				width: 28px;
+				height: 28px;
+				top 20px;
+			}
+			#top{
+				width: 100%;
+				height: 28px;
+				background:url(img/QQ图片20200808172640.png);
+			}
+			#top_2{
+				width: 100%;
+				height: 65px;
+				background: url(img/QQ图片20200808174922.png);
+			}
+			#top_2_1{
+				text-align: center;
+				width: 100px;
+				height: 65px;
+				line-height: 65px;
+				float: left;
+				
+				
+			}
+			#top_2_2{
+				text-align: center;
+				width: 160px;
+				height: 60px;
+				line-height: 60px;
+				float: right;
+				position: relative;
+				
+			}
+			
+			#toptext{
+				color: floralwhite;
+				font-size: 12px;
+				
+			}
+			#top1{
+				text-align: center;
+				width: 45px;
+				height: 28px;
+				font-size: 12px;
+				line-height: 28px;
+				float: left;
+				margin: 3;
+				
+				
+			}
+			#top2{
+				text-align: center;
+				width: 100px;
+				height: 28px;
+				font-size: 12px;
+				line-height: 28px;
+				float: right;
+				margin: 3;
+				
+			}
+			.texttop{
+				text-decoration: none;
+				color:  gainsboro;
+				
+			}
+			.texttop2{
+				text-decoration: none;
+				color: maroon;
+			
+				
+			}
+			#select1{
+				background-color: #DCDCDC;
+				width: 60px;
+				height: 20px;
+				border-radius: 10px;
+			}
+			#select1 select{
+				width: 200px;
+				height: 150px;
+				
+			}
+			.select2{
+				font-weight: 200;
+				color: red;
+			}
+			.textsearch{
+				width: 130px;
+				height: 28px;
+				border: 1px solid  #DCDCDC;
+				border-right: none;
+				
+			}
+			.text2{
+				text-decoration: none;
+				color: black;
+			}
+			.text3{
+				text-decoration: none;
+				color:  steelblue;
+				size 2;
+			}
+			#center{
+				width: 65%;
+				height: auto;
+				text-align: center;
+				margin-left: 15%;
+				float: left;
+                position: relative;
+			}
+			#center_left{
+				width: 67%;
+				height: auto;
+				position: relative;
+			}
+			#center_right{
+				width: 30%;
+				height: auto;
+				
+			}
+			#top_2_3{
+				width: 160px;
+				height: 30px;
+				 position: absolute;
+				 top 0;
+				 left 10px;
+				 right: 0;
+				 bottom: 10px;
+				 margin:auto;
+				
+			}
+			#center_left_1{
+				width: auto;
+				height: 300px;
+			
+				float: left;
+			}
+			#center_left_2{
+				width: 100%;
+				height: 200px;
+				border: 1px solid;
+				position: absolute;
+				top 800px;
+				
+			}
+			#center_right_1{
+				
+				width: auto;
+				height: 300px;
+				
+				position: absolute;
+				right: 0;
+			}
+			#center_right_2{
+				width: 28%;
+				height: 30px;
+				position: absolute;
+				right: 0;
+				top: 310px;
+				
+				text-align: left;
+			}
+			#center_right_3{
+				width: 28%;
+				height: auto;
+				position: absolute;
+				right: 0;
+				top: 360px;
+				
+				text-align: left;
+				
+			}
+			#table1{
+				width: 67%;
+				height: 150px;
+				
+				position: absolute;
+				top: 300px;
+				background: url(img/33.png);
+				
+			}
+		
+			#img_2{
+				width: 277px;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+	   <div id="top">
+	   	<div id="top1">
+	       <a href="https://www.douban.com/" class="texttop">豆瓣</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://book.douban.com/" class="texttop">读书</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://movie.douban.com/" class="texttop">电影</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://music.douban.com/" class="texttop">音乐</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://book.douban.com/" class="texttop">同城</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://book.douban.com/" class="texttop">小组</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://book.douban.com/" class="texttop">阅读</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://book.douban.com/" class="texttop">FM</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://book.douban.com/" class="texttop">时间</a>
+	   	</div>
+	   	<div id="top1">
+	       <a href="https://book.douban.com/" class="texttop">豆品</a>
+	   	</div>
+	   	<div id="top2"><a href="https://book.douban.com/" class="texttop">登录/注册</a></div>
+        <div id="top2"><a href="https://book.douban.com/" class="texttop">下载豆瓣客户端</a></div>
+        </div>
+        
+        
+        
+        
+        
+        <div id="top_2">
+        	<div style="width: 65%; height: 100%;margin-left: 15%;">
+        		<div id="top_2_1">
+        			<img src="img/QQ图片20200808175806.png" style="width: auto;height: 100%;" />
+        		</div>
+        		<div id="top_2_1"><select id="select1">
+        			<option>重庆</option>
+        			<option>北京</option>
+        		</select>
+        	    </div>
+        		<div id="top_2_1"><a href="" class="texttop2">近期活动</a></div>
+        		<div id="top_2_1"><a href="" class="texttop2">主办方</a></div>
+        		<div id="top_2_1"><a href="" class="texttop2">舞台剧</a></div>
+        		<div id="top_2_2">
+        			<div id="top_2_3">
+        			<input type="text" class="textsearch" placeholder="活动/舞台剧/地点" style="float: left;"/>
+        			<a href="" class="select2"><img src="img/QQ图片20200809151133.png" style="width: 25px;height: 30px;float: left;"/></a>
+        		    
+        			</div>
+        			
+        		    
+        			
+        		</div>
+        		
+            </div>
+        </div>
+        
+        <div style=" width: 100%; height: 43px;"></div>
+        
+        
+        <div style="width: 100%;height: auto;text-align: center;">
+        	<div id="center">
+        		<div id="center_left">
+        			<div id="center_left_1">
+        				<div style="width: 100%;height: 10%;">
+        					<font style="float: left;">热门活动</font>
+        					<input type="button" value=">" id="btn1" style="float: right;border-radius: 20px;width: 25px;"/>
+        					<input type="button" value="<" id="btn1" style="float: right;border-radius: 20px;width: 25px;"/>
+        				</div>
+        			<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        			<div style="width: 100%;height: 90%;">
+        				<a href=""><img src="img/11.png" id="img_1" style="width: 100%;height: 90%;" /></a>
+        				
+        			</div>
+        			
+        		</div>
+        	      
+        	    </div>
+        	<div id="center_right">
+        			<div id="center_right_1">
+        				<a href=""><img src="img/QQ图片20200809185641.png" style="width: auto;height: 235px;" />	</a>
+        				
+        				
+        				
+        				
+        			</div>
+        			<div style="position: absolute; width: auto;height: 31px;left: 716px;bottom: 10px;">
+        				<a href=""><img src="img/QQ图片20200809190813.png" style="width: auto;height: 30px;"/></a>
+        				
+        			</div>
+        		<div id="center_right_2">购票直通车</div>
+        		<div style="position: absolute;right: 0;top: 340px;width: 28%;height: 300px;"><hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/></div>
+        		<div id="center_right_3">
+        			<marquee behavior="scroll" scrolldelay="10" scrollamount="6" direction="down" width="277" height="500" onmouseover="this.stop()" onmouseout="this.start()" style="float: left;">
+        				<a href="">
+        				
+        				
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				<img src="img/QQ图片20200810165207.png" id="img_2"/>
+        				</a>
+                    </marquee>
+                    <div style="width: 100%;height: auto;position: absolute;top: 530px;">
+                    <font style="float: left;">重庆活跃的主办方</font>
+                    <a href="" class="text3"><font style="float: right;color: steelblue ;">更多》</font></a>
+                    
+                    	<div style="width: 100%;height: 20px;position: absolute;top: 30px;">
+        				<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        			</div>
+                    <div style="position: absolute;top: 50px;">
+        				<a href="">
+        					<img src="img/QQ图片20200810183033.png" style="width: 100%;" />
+        				</a>
+        			</div>
+        			<div style="position: absolute;top: 700px;">
+        				<img src="img/QQ图片20200810183218.png"  style="width: 100%;"/>
+        				<img src="img/QQ图片20200810183451.png"  style="width: 100%;"/>
+        				
+        			</div>
+                    
+                    
+                    
+                    </div>
+        		</div>
+        		
+        	</div>
+        	<div id="table1">
+        		
+        	<div style="position: absolute;bottom: 115px;left: 15px;"><a href="" class="text2">音乐》</a></div>
+        	<div style="position: absolute;bottom: 115px;left: 145px;"><a href="" class="text2">戏剧》</a></div>
+        	<div style="position: absolute;bottom: 115px;left: 275px;"><a href="" class="text2">聚会》</a></div>
+        	<div style="position: absolute;bottom: 115px;left: 405px;"><a href="" class="text2">电影》</a></div>
+        	<div style="position: absolute;bottom: 115px;left: 535px;"><a href="" class="text2">其他》</a></div>
+            <div style="position: absolute;bottom: 75px;right: 600px;"><a href="" class="text3"><font size="2">小型聚会</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 550px;"><a href="" class="text3"><font size="2">音乐会</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 497px;"><a href="" class="text3"><font size="2">戏剧</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 450px;"><a href="" class="text3"><font size="2">音乐剧</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 413px;"><a href="" class="text3"><font size="2">舞剧</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 368px;"><a href="" class="text3"><font size="2">生活</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 335px;"><a href="" class="text3"><font size="2">集市</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 300px;"><a href="" class="text3"><font size="2">摄影</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 213px;"><a href="" class="text3"><font size="2">主题放映</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 180px;"><a href="" class="text3"><font size="2">影展</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 108px;"><a href="" class="text3"><font size="2">讲座</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 75px;"><a href="" class="text3"><font size="2">展览</font></a></div>
+        	<div style="position: absolute;bottom: 75px;right: 40px;"><a href="" class="text3"><font size="2">运动</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 613px;"><a href="" class="text3"><font size="2">演唱会</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 563px;"><a href="" class="text3"><font size="2">音乐节</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 497px;"><a href="" class="text3"><font size="2">歌剧</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 463px;"><a href="" class="text3"><font size="2">戏曲</font></a></div>
+            <div style="position: absolute;bottom: 50px;right: 426px;"><a href="" class="text3"><font size="2">其他</font></a></div>
+            <div style="position: absolute;bottom: 50px;right: 368px;"><a href="" class="text3"><font size="2">外语</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 335px;"><a href="" class="text3"><font size="2">桌游</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 300px;"><a href="" class="text3"><font size="2">交友</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 213px;"><a href="" class="text3"><font size="2">影院活动</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 108px;"><a href="" class="text3"><font size="2">旅行</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 75px;"><a href="" class="text3"><font size="2">公益</font></a></div>
+        	<div style="position: absolute;bottom: 50px;right: 40px;"><a href="" class="text3"><font size="2">赛事</font></a></div>
+        	<div style="position: absolute;bottom: 25px;right: 368px;"><a href="" class="text3"><font size="2">美食</font></a></div>
+        	<div style="position: absolute;bottom: 25px;right: 335px;"><a href="" class="text3"><font size="2">派对</font></a></div>
+        	<div style="position: absolute;bottom: 25px;right: 108px;"><a href="" class="text3"><font size="2">课程</font></a></div>
+        	<div style="position: absolute;bottom: 25px;right: 75px;"><a href="" class="text3"><font size="2">亲子</font></a></div>
+        	</div>
+        	<div style="width: 67%;height: 30px;position: absolute;top: 477px;"> 
+        		             
+        				<div style="width: 100%;height: 10%;">
+        					<font style="float: left;">戏剧</font>
+        					
+        					<a href="" class="text3"><font style="float: right;color: steelblue ;">更多》</font></a>
+        					
+        					<div style="width:60%; height: 20px;position: absolute;left: 20%;top: 0;float: left;">
+        						<ul>
+        						<a href="" class="text3"><li>最热&nbsp;&nbsp;&nbsp;</li></a>
+        						<a href="" class="text3"><li>话剧&nbsp;&nbsp;&nbsp;</li></a>
+        						<a href="" class="text3"><li>音乐剧&nbsp;&nbsp;&nbsp;</li></a>
+        						<a href="" class="text3"><li>舞剧&nbsp;&nbsp;&nbsp;</li></a>
+        						<a href="" class="text3"><li>歌剧&nbsp;&nbsp;&nbsp;</li></a>
+        						<a href="" class="text3"><li>戏曲&nbsp;&nbsp;&nbsp;</li></a>
+        						<a href="" class="text3"><li>其他&nbsp;&nbsp;&nbsp;</li></a>
+        					</ul>
+        					</div>
+        				</div>
+        				<div style="width: 100%;height: auto;position: absolute;top: 30px;">
+        					<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        				</div>
+        			<div style="position: absolute; top: 50px;">
+        				<a href=""><img src="img/QQ图片20200810180422.png" style="width: 100%;" /></a>
+        				
+        			</div>
+        		<div style="width: 100%;position: absolute;top: 480px;">
+        			<font style="float: left;">展览</font>
+        			<a href="" class="text3"><font style="float: right;color: steelblue ;">更多》</font></a>
+        			
+        			<div style="width: 100%;height: 20px;position: absolute;top: 30px;">
+        				<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        			</div>
+        			<div style="position: absolute;top: 50px;">
+        				<a href="">
+        					<img src="img/QQ图片20200810181431.png" style="width: 100%;" />
+        				</a>
+        			</div>
+        		</div>	
+        		<div style="width: 100%;position: absolute;top: 950px;">
+        			<font style="float: left;">演唱会</font>
+        			<a href="" class="text3"><font style="float: right;color: steelblue ;">更多》</font></a>
+        			
+        			<div style="width: 100%;height: 20px;position: absolute;top: 30px;">
+        				<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        			</div>
+        			<div style="position: absolute;top: 50px;">
+        				<a href="">
+        					<img src="img/QQ图片20200810181950.png" style="width: 100%;" />
+        				</a>
+        			</div>
+        		</div>	
+        		<div style="width: 100%;position: absolute;top: 1400px;">
+        			<font style="float: left;">音乐</font>
+        			<a href="" class="text3"><font style="float: right;color: steelblue ;">更多》</font></a>
+        			
+        			<div style="width: 100%;height: 20px;position: absolute;top: 30px;">
+        				<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        			</div>
+        			<div style="position: absolute;top: 50px;">
+        				<a href="">
+        					<img src="img/QQ图片20200810181950.png" style="width: 100%;" />
+        				</a>
+        			</div>
+        		</div>	
+        		<div style="width: 100%;position: absolute;top: 1870px;">
+        			<font style="float: left;">亲子</font>
+        			<a href="" class="text3"><font style="float: right;color: steelblue ;">更多》</font></a>
+        			
+        			<div style="width: 100%;height: 20px;position: absolute;top: 30px;">
+        				<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        			</div>
+        			<div style="position: absolute;top: 50px;">
+        				<a href="">
+        					<img src="img/QQ图片20200810190630.png" style="width: 100%;" />
+        				</a>
+        			</div>
+        			<div style="width: 100%;position: absolute;top: 350px;">
+        			<font style="float: left;">电影</font>
+        			<a href="" class="text3"><font style="float: right;color: steelblue ;">更多》</font></a>
+        			
+        			<div style="width: 100%;height: 20px;position: absolute;top: 30px;">
+        				<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        			</div>
+        			<div style="position: absolute;top: 50px;">
+        				<a href="">
+        					<img src="img/QQ图片20200810190835.png" style="width: 100%;" />
+        				</a>
+        			</div>
+        			<div style="position: absolute; bottom: 0;width: 100%;height: auto;">
+        		    <div style="width: 988px;height: 20px;position: absolute;top: 460px;">
+        				<hr style="height:1px;border:none;border-top:1px dashed gainsboro;"/>
+        				<div style="position: absolute;top: 5px;width: 100%;height: auto;float: left;">
+        					<font size="2" color="#DCDCDC" style="float: left;">© 2005－2020 douban.com, all rights reserved 北京豆网科技有限公司</font>
+        				</div>
+        				<div style="position: absolute;top: 5px;width: 100%;height: auto;float: right;">
+        					<a href="" class="text3"><font size="2" style="float: right;">&nbsp;豆瓣广告&nbsp;</font></a>
+        					<a href="" class="text3"><font size="2" style="float: right;">&nbsp;移动应用&nbsp;</font></a>
+        					<a href="" class="text3"><font size="2" style="float: right;">&nbsp;帮助中心&nbsp;</font></a>
+        					<a href="" class="text3"><font size="2" style="float: right;">&nbsp;法律声明&nbsp;</font></a>
+        					<a href="" class="text3"><font size="2" style="float: right;">&nbsp;联系我们&nbsp;</font></a>
+        					<a href="" class="text3"><font size="2" style="float: right;">&nbsp;在豆瓣工作&nbsp;</font></a>
+        					<a href="" class="text3"><font size="2" style="float: right;">&nbsp;关于豆瓣&nbsp;</font></a>	
+        				</div>	
+        				<div style="position: absolute;top: 20px;width: 100%;height: auto;float: left;">
+        					&nbsp;
+        				</div>
+        		    </div>
+        	       </div>	
+        		</div>
+        		</div>	
+        	</div>
+        	</div>
+        </div>
+	</body>
+</html>

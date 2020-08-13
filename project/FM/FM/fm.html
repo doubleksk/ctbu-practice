@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>歌名</title>
+		<link rel="shortcut icon" href="https://img3.doubanio.com/f/fm/55cc7ebd1777d5101a82d7d6ce47ffc5e114131d/pics/fm/san_favicon.ico"
+		 type="image/x-icon">
+		<style type="text/css">
+			html {
+				box-sizing: border-box
+			}
+
+			*,
+			:after,
+			:before {
+				box-sizing: inherit
+			}
+
+			#app,
+			.top-level,
+			body,
+			html {
+				background-color: #fff;
+				margin: 0;
+				height: 100%;
+				min-height: 540px;
+				width: 100%
+			}
+
+			* {
+				/* font-family 可以把多个字体名称作为一个“回退”系统来保存。如果浏览器不支持第一个字体 */
+				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, PingFang SC, Source Han Sans CN, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				cursor: default;
+				font-weight: 400
+			}
+
+			/* 去除滚动条 */
+			::-webkit-scrollbar {
+				display: none
+			}
+
+			/* 光标呈现为指示链接的指针（一只手） */
+			a,
+			a>i,
+			a>span {
+				cursor: pointer
+			}
+
+			a {
+				color: #8f8e94;
+				text-decoration: none
+			}
+
+			p {
+				font-size: 12px;
+				color: #9b9b9b
+			}
+
+			/* overflow-style 规定溢出元素的首选滚动方法 */
+			html {
+				-ms-overflow-style: none
+			}
+
+			#app,
+			.top-level,
+			body,
+			html {
+				background-color: #fff;
+				margin: 0;
+				height: 100%;
+				min-height: 540px;
+				width: 100%
+			}
+		</style>
+		<style type="text/css">
+			/* app界面 */
+			/* 迷你play不做在页面里 */
+			html {
+				box-sizing: border-box
+			}
+
+			*,
+			:after,
+			:before {
+				box-sizing: inherit
+			}
+
+			.app-header {
+				position: fixed;
+				width: 100%;
+				-webkit-backdrop-filter: opacity(.95) blur(8px)
+			}
+
+			.app-header .feedback {
+				position: absolute;
+				left: 140px;
+				top: 31px;
+				z-index: 1000;
+				font-size: 12px
+			}
+
+			.app-header .feedback a {
+				font-size: 12px;
+				color: #8f8e94
+			}
+
+			.app-header .feedback .icon-point {
+				margin: 0 6px
+			}
+
+			.app-header .feedback .version-switcher {
+				margin-right: 15px
+			}
+
+			.app-header .feedback .version-switcher,
+			.app-header .feedback .version-switcher>span {
+				color: #acacac;
+				cursor: pointer
+			}
+
+			.app-header .feedback .version-switcher:hover,
+			.app-header .feedback .version-switcher:hover span {
+				color: #939393
+			}
+
+			.app-header.mini .feedback {
+				display: none
+			}
+
+			.app-header .inner {
+				max-width: 1024px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 1024px;
+				height: 100px;
+				position: relative
+			}
+
+			.app-header .inner:after {
+				clear: both;
+				content: "";
+				display: block
+			}
+
+			.app-header .inner .nav-logo {
+				margin-top: 28px;
+				display: block;
+				float: left;
+				width: 100px
+			}
+
+			.app-header .inner .mini-player {
+				display: block;
+				float: left;
+				margin-top: 28px;
+				margin-left: 60px;
+				height: 53px;
+				min-width: 400px
+			}
+
+			.app-header .inner .mini-player .titles {
+				float: left;
+				width: 330px
+			}
+
+			.app-header .inner .mini-player .actions {
+				position: absolute;
+				top: 16px;
+				left: 390px;
+				width: 162px
+			}
+
+			.app-header .inner .fr {
+				padding-top: 43px;
+				position: absolute;
+				right: 0;
+				top: 0
+			}
+
+			.app-header .nav-logo {
+				position: relative
+			}
+
+			.app-header .nav-logo div {
+				color: transparent;
+				text-decoration: none;
+				display: block;
+				width: 100px;
+				height: 40px;
+				background-size: 100% 100%;
+				background-repeat: no-repeat
+			}
+
+			.app-header .nav-logo i {
+				position: absolute;
+				left: 105px;
+				top: 25px;
+				color: #4a4a4a
+			}
+
+			.app-header .nav-logo i:hover {
+				-webkit-animation: shake 1s linear;
+				animation: shake 1s linear
+			}
+
+			.app-header .mini-player {
+				height: 38px;
+				position: relative
+			}
+
+			.app-header .mini-player .actions>.icon {
+				display: inline-block;
+				margin-right: 22px;
+				vertical-align: middle;
+				-webkit-transition: opacity .2s linear;
+				transition: opacity .2s linear
+			}
+
+			.app-header .mini-player .actions>.icon.icon-shuffle {
+				position: absolute;
+				left: -36px;
+				top: 50%;
+				margin-top: -14px
+			}
+
+			.app-header .mini-player .actions>.icon.icon-list {
+				position: absolute;
+				right: -10px;
+				top: 2px;
+				margin: 0
+			}
+
+			.app-header .mini-player.playing-songlist .pl-title,
+			.app-header .mini-player.playing-songlist .title {
+				width: 260px
+			}
+
+			.app-header .mini-player .title {
+				width: 315px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis
+			}
+
+			.app-header .mini-player .pl-title {
+				display: inline-block;
+				overflow: hidden;
+				height: 2em;
+				width: 260px
+			}
+
+			.app-header .mini-player .pl-title,
+			.app-header .mini-player .pl-title>a {
+				font-size: 13px;
+				color: #9b9b9b;
+				line-height: 13px
+			}
+
+			.app-header .mini-player .pl-title>a.link {
+				color: #9b9b9b;
+				display: inline-block
+			}
+
+			.app-header .mini-player .pl-title>a.link:hover {
+				text-decoration: none;
+				background-image: -webkit-linear-gradient(top, #9b9b9b 75%, #9b9b9b 0);
+				background-image: linear-gradient(top, #9b9b9b 75%, #9b9b9b 0);
+				background-position: 0 97%;
+				background-repeat: repeat-x;
+				background-size: 1px 1px;
+				opacity: 1
+			}
+
+			.app-header .mini-player .mhz-identity {
+				font-size: 10px;
+				margin-left: .5em
+			}
+
+			.app-header .mini-player .title {
+				line-height: 22px;
+				margin-bottom: 8px;
+				color: #030303;
+				font-size: 14px;
+				height: 16px;
+				line-height: 1.1
+			}
+
+			.app-header .mini-player .title .link {
+				color: #4a4a4a
+			}
+
+			.app-header .mini-player .title .link:hover {
+				text-decoration: none;
+				background-image: -webkit-linear-gradient(top, #4a4a4a 75%, #4a4a4a 0);
+				background-image: linear-gradient(top, #4a4a4a 75%, #4a4a4a 0);
+				background-position: 0 97%;
+				background-repeat: repeat-x;
+				background-size: 1px 1px;
+				opacity: 1
+			}
+
+			.app-header .mini-player .extra-info {
+				margin-top: 5px;
+				position: relative
+			}
+
+			.app-header .mini-player .extra-info .right-area {
+				position: absolute;
+				right: 0;
+				top: 0
+			}
+
+			.app-header .mini-player .extra-info .time {
+				font-size: 12px;
+				color: #62646c;
+				display: inline-block;
+				width: 38px;
+				line-height: 18px;
+				height: 18px;
+				vertical-align: top
+			}
+
+			.app-header .mini-player .extra-info .volume-slider {
+				position: relative;
+				top: -2px;
+				margin-left: 0
+			}
+
+			.app-header .mini-player .icon-heart.like {
+				color: #ff2c56
+			}
+
+			.app-header .mini-player .pause-overlay {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				line-height: 53px;
+				height: 53px;
+				font-size: 13px;
+				color: #4a4a4a;
+				background: hsla(0, 0%, 100%, .9);
+				cursor: pointer;
+				text-align: center
+			}
+
+			.app-header .user-block {
+				font-size: 12px;
+				float: right
+			}
+
+			.app-header .user-block i {
+				vertical-align: middle
+			}
+
+			.app-header .user-block a {
+				font-size: 12px;
+				margin-left: 10px;
+				display: inline-block;
+				height: 24px;
+				line-height: 24px
+			}
+
+			.app-header .progress {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0
+			}
+		</style>
+		<style type="text/css">
+			/* 下载画面 */
+			.downimg {
+				text-align: center;
+			}
+
+			.dowmfont {
+				color: rgb(155, 155, 155);
+				font-size: 12px;
+				font-weight: 300;
+				text-align: center;
+			}
+		</style>
+		<style type="text/css">
+			/* 音浪 */
+			/* 动画名,该动画表示某个东西将逐渐消失。 */
+			/* 可以不使用关键字from和to，而都使用<percentage> */
+			@-webkit-keyframes _1Rl9BhFpXE_Fg8PoGPNwTI {
+				0% {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+
+				50% {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+
+				to {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+			}
+
+			/* 动画名,该动画表示某个东西将逐渐消失。 */
+			@keyframes _1Rl9BhFpXE_Fg8PoGPNwTI {
+				0% {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+
+				50% {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+
+				to {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+			}
+
+			@-webkit-keyframes _1xoqgWpSgNLVFN8yRKTv3V {
+				0% {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+
+				50% {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+
+				to {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+			}
+
+			@keyframes _1xoqgWpSgNLVFN8yRKTv3V {
+				0% {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+
+				50% {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+
+				to {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+			}
+
+			@-webkit-keyframes _16kZdDLRTdUeqSBJ-399h1 {
+				0% {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+
+				50% {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+
+				to {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+			}
+
+			@keyframes _16kZdDLRTdUeqSBJ-399h1 {
+				0% {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+
+				50% {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+
+				to {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+			}
+
+			@-webkit-keyframes QrzY9ZBsI0W7Fqp7Kf5hq {
+				0% {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+
+				50% {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+
+				to {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+			}
+
+			@keyframes QrzY9ZBsI0W7Fqp7Kf5hq {
+				0% {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+
+				50% {
+					-webkit-transform: translateY(0);
+					transform: translateY(0)
+				}
+
+				to {
+					-webkit-transform: translateY(10px);
+					transform: translateY(10px)
+				}
+			}
+
+			._2FK70ok0TdhLi_JTNHKPzS {
+				-webkit-animation-play-state: paused;
+				animation-play-state: paused
+			}
+
+			.yinlang1 {
+				-webkit-animation-duration: 2s;
+				animation-duration: 2s;
+				-webkit-animation-name: _1Rl9BhFpXE_Fg8PoGPNwTI;
+				animation-name: _1Rl9BhFpXE_Fg8PoGPNwTI;
+				-webkit-animation-iteration-count: infinite;
+				animation-iteration-count: infinite
+			}
+
+			.yinlang2 {
+				-webkit-animation-duration: 1.4s;
+				animation-duration: 1.4s;
+				-webkit-animation-name: _1xoqgWpSgNLVFN8yRKTv3V;
+				animation-name: _1xoqgWpSgNLVFN8yRKTv3V;
+				-webkit-animation-iteration-count: infinite;
+				animation-iteration-count: infinite
+			}
+
+			.yinlang3 {
+				-webkit-animation-duration: 1.8s;
+				animation-duration: 1.8s;
+				-webkit-animation-name: _16kZdDLRTdUeqSBJ-399h1;
+				animation-name: _16kZdDLRTdUeqSBJ-399h1;
+				-webkit-animation-iteration-count: infinite;
+				animation-iteration-count: infinite
+			}
+
+			.yinlang4 {
+				-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+				-webkit-animation-name: QrzY9ZBsI0W7Fqp7Kf5hq;
+				animation-name: QrzY9ZBsI0W7Fqp7Kf5hq;
+				-webkit-animation-iteration-count: infinite;
+				animation-iteration-count: infinite
+			}
+		</style>
+		<!-- 下划线 -->
+		<style type="text/css">
+			.link {
+				text-decoration: none;
+			}
+
+			.link:hover {
+				text-decoration: underline;
+			}
+		</style>
+		<!-- time -->
+		<style type="text/css">
+			.time {
+				font-size: 12px;
+				color: #62646c;
+				display: inline-block;
+				width: 38px;
+				line-height: 18px;
+				height: 18px;
+				vertical-align: top
+			}
+		</style>
+		<!-- 滑块样式 -->
+		<!-- <style type="text/css">
+			.volume-slider {
+				display: inline-block;
+				overflow: hidden;
+				height: 18px
+			}
+			
+			.volume-slider .ui-slider,
+			.volume-slider .volume-icon {
+				vertical-align: middle
+			}
+			
+			.volume-slider .volume-icon {
+				display: inline-block
+			}
+			
+			.volume-slider .volume-icon>.icon {
+				color: #c6c6c6
+			}
+			
+			.volume-slider .ui-slider {
+				display: inline-block;
+				-webkit-transition: all .3s linear;
+				transition: all .3s linear;
+				padding-left: 2px
+			}
+		</style> -->
+		<!-- icon -->
+		<style type="text/css">
+			.icon {
+				display: inline-block;
+				vertical-align: middle;
+				position: relative
+			}
+
+			.icon:hover,
+			.icon:hover * {
+				cursor: pointer
+			}
+		</style>
+		<!-- 歌曲进度条 -->
+		<style type="text/css">
+			._3dc88PzjGniYgbqLSjQQcb {
+				width: 100%;
+				position: relative;
+				display: block;
+				height: 1px;
+				background-color: #dadada;
+				-webkit-transition-property: width;
+				transition-property: width
+			}
+		</style>
+		<!-- player-cover -->
+		<style type="text/css">
+			.playing-cover .hover-tip {
+				width: 90px;
+				display: none;
+				position: absolute;
+				text-align: center;
+				line-height: 20px;
+				height: 20px;
+				font-size: 12px;
+				top: 50%;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -45px;
+				color: #fff;
+				background: rgba(0, 0, 0, .6);
+				border-radius: 1px
+			}
+
+			.playing-cover:before {
+				content: ' ';
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background: hsla(0, 0%, 100%, .1);
+				display: none
+			}
+
+			.playing-cover:hover .hover-tip,
+			.playing-cover:hover:before {
+				display: block
+			}
+
+			.playing-cover {
+				width: 200px;
+				height: 200px;
+				position: relative;
+				overflow: hidden;
+				background-size: cover
+			}
+
+			.playing-cover .cover {
+				position: absolute;
+				top: 0;
+				left: 0
+			}
+
+			.playing-cover,
+			.playing-cover>* {
+				cursor: pointer
+			}
+
+			.playing-cover .icon {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 40px;
+				text-align: center;
+				margin-top: -20px;
+				margin-left: -20px;
+				color: hsla(0, 0%, 100%, .8)
+			}
+
+			.playing-cover .icon-pause {
+				display: none
+			}
+
+			.playing-cover:hover .icon-pause {
+				display: block
+			}
+
+			.playing-cover:hover>img {
+				-webkit-animation-play-state: paused;
+				animation-play-state: paused
+			}
+		</style>
+		<!-- 收回按钮 -->
+		<style type="text/css">
+			.q7sVUCVH_o9AZe1H03951 {
+				z-index: 1000;
+				display: block;
+				left: 50%;
+				margin-left: 503px;
+				border-radius: 50%;
+				width: 26px;
+				height: 26px;
+				line-height: 24px;
+				border: 1px solid #6bbd7a;
+				text-align: center
+		</style>
+		<!-- 兆赫，歌单，我的搜索样式 -->
+		<style type="text/css">
+			.section-switcher>.section-header {
+					padding: 0;
+					background: #fff;
+					text-align: center
+				}
+			
+				.section-switcher>.section-header li {
+					list-style: none;
+					width: auto;
+					display: inline-block
+				}
+			
+				.section-switcher>.section-header li a {
+					line-height: 22px;
+					height: 22px;
+					text-decoration: none;
+					font-size: 14px;
+					color: #8f8e94
+				}
+			
+				.section-switcher>.section-header li a:hover {
+					color: #75747b
+				}
+			
+				.section-switcher>.section-header li a,
+				.section-switcher>.section-header li a>i {
+					cursor: pointer
+				}
+			
+				.section-switcher>.section-header li.current a {
+					color: #45a156
+				}
+			
+				.section-switcher>.section-header .pull-right {
+					float: right
+				}
+			
+				.section-switcher>.section-header .blank-line {
+					position: absolute;
+					bottom: 0;
+					height: 3px;
+					background-color: #6bbd7a
+				}
+			
+				.section-switcher-explore {
+					height: 100px
+				}
+			
+				.section-switcher-explore>.section-header {
+					padding-top: 38px;
+					padding-bottom: 39px
+				}
+			
+				.section-switcher-explore>.section-header li {
+					margin-right: 40px;
+					margin-left: 40px
+				}
+			
+				.section-switcher-explore>.section-content {
+					visibility: hidden
+				}
+			
+				.section-switcher-explore.focus>.section-header>ul>li a {
+					font-size: 16px;
+					color: #9b9b9b
+				}
+			
+				.section-switcher-explore.focus>.section-header>ul>li a:hover {
+					color: #828282
+				}
+			
+				.section-switcher-explore.focus>.section-header>ul>li.current a {
+					color: #44a156;
+					font-weight: 500
+				}
+			
+				.section-switcher-explore.focus>.section-header>ul>li.current a:hover {
+					color: #357d43
+				}
+			
+				.section-switcher-explore.focus>.section-content {
+					visibility: visible
+				}
+			
+				.section-switcher-mine>.section-header {
+					background: transparent;
+					border-color: transparent;
+					padding: 0;
+					margin: 0;
+					display: block
+				}
+			
+				.section-switcher-mine>.section-header li {
+					margin-right: 30px
+				}
+			
+				.section-switcher-mine>.section-header li a {
+					font-size: 13px;
+					color: #9b9b9b;
+					line-height: 18px
+				}
+			
+				.section-switcher-mine>.section-header li.current.tab-hearts a {
+					color: #ff2c56
+				}
+			
+				.section-switcher-mine>.section-content {
+					padding-top: 30px
+				}
+			</style>
+		</style>
+		<!-- 艺术家和标签选歌+底部样式 -->
+		<style type="text/css">
+			<style type="text/css">
+				html {
+					box-sizing: border-box
+				}
+			
+				*,
+				:after,
+				:before {
+					box-sizing: inherit
+				}
+			
+				.channels-block {
+					text-align: center;
+					margin-bottom: 40px
+				}
+			
+				.channels-block ul {
+					padding: 0;
+					margin: 0;
+					text-align: left
+				}
+			
+				.channels-block h3 {
+					text-align: left;
+					margin: 0;
+					margin-bottom: 10px;
+					font-size: 14px;
+					font-weight: 400;
+					color: #9b9b9b;
+					line-height: 20px
+				}
+			
+				.channels-block .channel {
+					border-bottom: 1px solid #f1f1f1;
+					height: 213px
+				}
+			
+				.channels-block .channel-rounded {
+					height: 248px
+				}
+			
+				.channels-block .channel-text:nth-child(-n+5) {
+					border-top: 1px solid #f1f1f1
+				}
+			
+				.channels-block .channel {
+					width: 204px;
+					list-style: none;
+					display: block;
+					float: left;
+					text-align: center
+				}
+			
+				.channels-block .channel .cover {
+					display: inline-block;
+					width: 108px;
+					height: 108px;
+					background-size: cover;
+					margin-top: 30px
+				}
+			
+				.channels-block .channel .title {
+					display: inline-block;
+					margin-top: 20px;
+					font-size: 14px;
+					color: #4a4a4a;
+					line-height: 18px;
+					white-space: nowrap;
+					max-width: 100%;
+					overflow: hidden;
+					text-overflow: ellipsis
+				}
+			
+				.channels-block .channel .subtitle {
+					margin-top: 8px;
+					padding: 0 10px;
+					max-height: 32px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					line-height: 16px
+				}
+			
+				.channels-block .channel .subtitle,
+				.channels-block .channel .subtitle a.link,
+				.channels-block .channel .subtitle span {
+					font-size: 12px;
+					color: #acacac;
+					font-weight: 500
+				}
+			
+				.channels-block .channel .subtitle a.link {
+					color: #acacac
+				}
+			
+				.channels-block .channel .subtitle a.link:hover {
+					text-decoration: none;
+					background-image: -webkit-linear-gradient(top, #acacac 75%, #acacac 0);
+					background-image: linear-gradient(top, #acacac 75%, #acacac 0);
+					background-position: 0 97%;
+					background-repeat: repeat-x;
+					background-size: 1px 1px;
+					opacity: 1
+				}
+			
+				.channels-block .channel .mhz {
+					margin-left: .5em;
+					font-size: 10px;
+					line-height: 14px;
+					color: #acacac;
+					vertical-align: bottom;
+					font-weight: 500
+				}
+			
+				.channels-block.text-channels ul {
+					display: block;
+					text-align: left
+				}
+			
+				.channels-block.text-channels .channel-text {
+					text-align: center;
+					height: 54px;
+					line-height: 54px;
+					float: none;
+					display: inline-block
+				}
+			
+				.channels-block.text-channels .channel-text .title {
+					font-size: 14px;
+					color: #030303;
+					font-weight: 500
+				}
+			
+				.channels-block .more .desc {
+					margin-top: 15px;
+					font-size: 13px;
+					color: #c4c4c4;
+					line-height: 13px
+				}
+			
+				.channels-block .button-more {
+					background: #fff;
+					border: 1px solid #e1e1e1;
+					border-radius: 2px;
+					font-size: 12px;
+					color: #9b9b9b;
+					line-height: 30px;
+					height: 30px;
+					margin-top: 30px;
+					padding: 0 20px
+				}
+			
+				.channels-block .button-more:hover {
+					text-decoration: none;
+					color: #4a4a4a;
+					opacity: 1
+				}
+			
+				.channels-block div.clear {
+					clear: border-top: ;
+				}
+			</style>
+		</style>
+		<!-- 艺术家 -->
+		<style type="text/css">
+			.container {
+				max-width: 1024px;
+				margin-left: auto;
+				margin-right: auto;
+				position: relative;
+				padding: 0;
+				margin: 0 auto
+			}
+			
+			.container:after {
+				clear: both;
+				content: "";
+				display: block
+			}
+		</style>
+		<style type="text/css">
+			._3DYFBb6aiu160iAo00Uo4D {
+				text-align: center;
+				padding-bottom: 35px
+			}
+			
+			._1CLH3mOUWOTNQIed5FwSQW {
+				color: #9b9b9b;
+				font-size: 12px
+			}
+			
+			.en5lC4BZFKw6hFoQJkM4H a,
+			.en5lC4BZFKw6hFoQJkM4H span {
+				color: #62646c
+			}
+			
+			.en5lC4BZFKw6hFoQJkM4H a:hover {
+				text-decoration: underline
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<div data-reactroot="" class="app">
+				<!-- data-reactid属性是使用的自定义属性，以便React可以在DOM中唯一标识其组件 -->
+				<!-- 顶部+播放器 -->
+				<div class="app-header" style="position: relative; z-index: 2000;">
+					<div class="inner">
+						<!-- inner内部的 -->
+						<div class="nav-logo" style="z-index: 1000;">
+							<!-- 导航logo -->
+							<div style="background-image: url(&quot;//img3.doubanio.com/dae/staticng/s/bragi/5c02cfc1f8edbb05fab15d946080d7acc8dc10fb/deploy/b6a46d59a094ec51ec67452607965e2c.svg&quot;);"></div>
+							<!-- <a href="" target="_blank"> “_blank”的意思：浏览器总在一个新打开、未命名的窗口中载入目标文档。
+							</a> -->
+						</div>
+						<div class="feedback">
+							<!-- 下载和反馈 -->
+							<div style="display: inline-block;">
+								<a href="">下载豆瓣FM APP</a>
+								<!-- 中间的点 -->
+								<svg title="Title" viewBox="0 0 9 9" height="9" width="9" class="icon" style="vertical-align: middle;">
+									<desc>Icon</desc>
+									<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<circle id="Oval-59" fill="#c6c6c6" cx="4.5" cy="4.5" r="1.5"></circle>
+									</g>
+								</svg>
+								<a href="">我要反馈</a>
+							</div>
+						</div>
+						<!-- 顶部注册 -->
+						<div class="fr" style="line-height: 22px; ">
+							<div class="user-block" style="padding-right: 200px;">
+								<div><a href="" class="login-link">登录</a>&nbsp;
+									<span style="color: rgb(216, 216, 216); margin-left: 10px;">|</span>
+									<a href="" class="login-link">注册</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- player-wrapper播放器包装 没填写 -->
+				<div class="player-wrapper" style=" height: 617px; width: 100%; transform: translate3d(0px, 0px, 0px);">
+					<div style="background-color: rgba(250, 250, 250, 0.93); position: static; width: 100%; height: 100%;">
+						<!-- 左边 -->
+						<div class="left" style="transform: scale(1); opacity: 1; top: 50%; margin-top: -70px; position: absolute; left: 50%; margin-left: -475px; width: 200px; height: 200px;">
+							<div class="dowmfont"><img width="90" height="90" src="img/download.png" alt="FM APP">
+								<!-- <img alt="name">  alt 属性中为图像添加了描述性文本 -->
+								<div>
+									<div class="dowmfont">下载豆瓣FM APP</div>
+									<div class="dowmfont">让好音乐继续</div>
+								</div>
+							</div>
+						</div>
+						<!-- 中间 -->
+						<div class="middle" style="width: 430px; top: 50%; margin-top: 30px; position: absolute; left: 50%; margin-left: -215px; transform: translate3d(0px, 0px, 0px);">
+							<div style="position: absolute; bottom: 156px; height: 0px; line-height: 0px;">
+								<!-- 豆瓣精选 -->
+								<div>
+									<!-- 音浪 -->
+									<div class="" style="position: absolute; width: 12px; height: 12px; display: inline-block; overflow: hidden; left: -22px; bottom: 4px;">
+										<div class="yinlang1" style="position: absolute; background: rgb(92, 188, 125); height: 12px; left: 1px; width: 2px; border-radius: 25%;"></div>
+										<div class="yinlang2" style="position: absolute; background: rgb(92, 188, 125); height: 12px; left: 4px; width: 2px; border-radius: 25%;"></div>
+										<div class="yinlang3" style="position: absolute; background: rgb(92, 188, 125); height: 12px; left: 7px; width: 2px; border-radius: 25%;"></div>
+										<div class="yinlang4" style="position: absolute; background: rgb(92, 188, 125); height: 12px; left: 10px; width: 2px; border-radius: 25%;"></div>
+									</div>
+									<div style="font-size: 16px; font-weight: 400; height: 22px; line-height: 22px; color: rgb(47, 152, 66); bottom: 0px; left: 0px; position: absolute; width: 430px; opacity: 1;">
+										豆瓣精选 MHz
+										<svg title="Title" viewBox="134 78 9 16" height="16" width="16" class="icon" style="vertical-align: middle; top: -2px; margin-left: 14px;">
+											<desc>Icon</desc>
+											<path d="M140.895865,89.8459828 C140.690998,90.0513391 140.358992,90.0513391 140.15362,89.8459828 C139.948793,89.640129 139.948793,89.3071763 140.15362,89.1013146 L143.246666,86.000004 L140.15362,82.8981639 C139.948793,82.6927996 139.948793,82.3593654 140.15362,82.1539931 C140.358992,81.948669 140.690998,81.948669 140.895865,82.1539931 L144.360483,85.6274131 C144.56535,85.8332669 144.56535,86.1662116 144.360483,86.3720814 L140.895865,89.8459828 Z M136.618268,89.8459828 C136.823135,90.0513391 137.155141,90.0513391 137.360513,89.8459828 C137.56534,89.640129 137.56534,89.3071763 137.360513,89.1013146 L134.267467,86.000004 L137.360513,82.8981639 C137.56534,82.6927996 137.56534,82.3593654 137.360513,82.1539931 C137.155141,81.948669 136.823135,81.948669 136.618268,82.1539931 L133.15365,85.6274131 C132.948783,85.8332669 132.948783,86.1662116 133.15365,86.3720814 L136.618268,89.8459828 Z"
+											 stroke="none" fill="#6BBD7A" fill-rule="evenodd" transform="translate(138.757066, 86.000000) rotate(90.000000) translate(-138.757066, -86.000000) "></path>
+										</svg>
+									</div>
+								</div>
+							</div>
+							<!-- 歌名歌手名 -->
+							<div style="position: absolute; bottom: 64px; height: 32px; line-height: 1.28; font-size: 25px; font-weight: 400; color: rgb(3, 3, 3); white-space: nowrap; text-overflow: ellipsis; max-width: 100%; overflow: hidden; z-index: 1000;">
+								<a class="link" title="Over the Rainbow" style="font-size: 25px; font-weight: 400; color: rgb(3, 3, 3);">
+									歌名
+								</a>
+							</div>
+							<div style="position: absolute; bottom: 38px; height: 18px; line-height: 1.2; font-size: 15px; font-weight: 400; color: rgb(74, 74, 74); opacity: 1;">
+								<span>
+									<a class="link" title="Judy Collins" style="font-size: 15px; font-weight: 400; line-height: 1.2; color: rgb(74, 74, 74);">
+										歌手名
+									</a>
+								</span>
+							</div>
+							<div style="position: absolute; bottom: 10px; height: 13px; line-height: 13px; font-size: 11px; font-weight: 400; color: rgb(155, 155, 155); width: 100%;">
+								<!-- volume-and-time 音量与时间未填写-->
+								<div class="volume-and-time" style="transform: translate3d(0px, 0px, 0px); display: inline-block; color: rgb(155, 155, 155);">
+									<span class="time" style="color: rgb(155, 155, 155); font-weight: 400; margin-right: 10px; display: inline-block; width: 40px;">-00:00</span>
+									<span class="volume-slider" style="height: 15px; position: relative; top: 3px;">
+										<svg viewBox="0,0,18,18" height="11" width="15" class="volume-icon" style="vertical-align: middle;">
+											<!-- <desc></desc>读取数据时按照降序排列读取 -->
+											<!-- 音量 -->
+											<g id="outbox" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<g id="inbox" transform="translate(0.000000, 0.000000) scale(1.4)" fill="#919191">
+													<!-- 从上到下 梯形和括弧 -->
+													<path d="M4.39035714,1.10464215 L1.5,4 L0.5,4 C0.302857143,4 0,4 0,4.5 L0,7.5 C0,8 0.302857143,8 0.5,8 L1.5,8 L4.39035714,10.8952903 C4.4925,10.9974324 4.64607143,11.0281465 4.77964286,10.9727897 C4.91321429,10.917433 5,10.7874338 5,10.642792 L5,1.35714044 C5,1.2128557 4.91285714,1.08249944 4.77964286,1.02714267 C4.73535714,1.00892851 4.68892857,1 4.64285714,1 C4.55,1 4.45857143,1.03642833 4.39035714,1.10464215 Z"
+													 id="Shape" transform="translate(2.500000, 6.000000) scale(1, -1) translate(-2.500000, -6.000000) "></path>
+													<path d="M7.12915286,8.59484045 C7.22027735,8.70345348 7.35098117,8.7596009 7.48306566,8.7596009 C7.58707645,8.7596009 7.69154746,8.72462382 7.77806971,8.65282876 C8.50154297,8.04809348 9,6.99999993 9,5.99733213 C9,4.99466434 8.49141802,3.9226391 7.75091645,3.31882427 C7.55394027,3.15774562 7.2639987,3.1890409 7.10338027,3.38509663 C6.94276184,3.58207281 6.97267645,3.87201438 7.16965263,4.03263281 C7.69799061,4.46340315 7.98629522,4.99558479 8,5.99779236 C8.01370478,6.99999993 7.70397353,7.51469303 7.18714117,7.94638382 C6.99200589,8.10930337 6.96669353,8.39970517 7.12915286,8.59484045 Z"></path>
+													<path d="M10.2816139,10.0758436 C11.3056139,9.07623551 12,8.00000011 12,5.99779236 C12,3.99558461 11.3056139,2.91888899 10.2816139,1.9192809 C10.0998252,1.74209438 9.80896314,1.74531596 9.63085617,1.92756494 C9.45320943,2.10981393 9.45689123,2.40067596 9.63914022,2.5783227 C10.4864139,3.40534652 10.9724113,4.49650506 11,5.99825258 C11.0275887,7.50000011 10.4859537,8.59069843 9.63914022,9.41772225 C9.45689123,9.59536899 9.45366966,9.88669124 9.63085617,10.06848 C9.72106022,10.1605249 9.84071864,10.2065474 9.96037707,10.2065474 C10.0763537,10.2065474 10.1923303,10.1628261 10.2816139,10.0758436 Z"></path>
+													<path d="M12.7930946,11.483671 C14.1056555,10.1089798 14.999885,8.7399225 15,5.99687191 C15.000115,3.25382132 14.1051953,1.88522427 12.7935548,0.510533034 C12.6182092,0.326903371 12.3259665,0.32 12.1427971,0.495345618 C11.9591674,0.671151461 11.9522641,0.962473708 12.1276097,1.14610337 C13.2781715,2.35143191 14.0001151,3.57113359 14,5.99687191 C13.9998849,8.42261023 13.2781715,9.64277213 12.1271494,10.8481007 C11.9518038,11.0317303 11.9587072,11.3230526 12.1423369,11.4988584 C12.2311602,11.5844602 12.3457562,11.6263407 12.4598919,11.6263407 C12.5813912,11.6263407 12.7019701,11.5784773 12.7930946,11.483671 Z"></path>
+												</g>
+											</g>
+										</svg>
+										<!-- 滑块
+																<div class="slider ui-slider hide" style="width: 55px; height: 15px; margin-right: -55px;">
+																	<div class="bar-container" style="display: block; width: 50px; height: 2px; background-color: rgb(229, 229, 232); margin-top: 6.5px;">
+																		<div class="bar" style="background-color: rgb(151, 151, 151); height: 2px; width: 0px;"></div>
+																	</div>
+																	<div class="handle react-draggable" style="touch-action: none; top: 2.5px; height: 10px; width: 5px; transform: translate(0px, 0px);"></div>
+																</div> -->
+									</span>
+								</div>
+								<div class="sub-buttons-wrapper" style="float: right; opacity: 1;">
+									<div class="sub-buttons">
+										<label title="显示歌词">
+											<svg title="Title" viewBox="0 0 20 20" height="20" width="20" class="icon" style="vertical-align: middle;">
+												<desc>Icon</desc>
+												<g id="icon" fill="none" fill-rule="evenodd">
+													<g id="ci" fill="#B9B9B9">
+														<path d="M2 7.5c0-.276.229-.5.5-.5h11c.276 0 .5.232.5.5 0 .276-.229.5-.5.5h-11a.505.505 0 0 1-.5-.5zm1 3c0-.276.215-.5.498-.5h4.004c.275 0 .498.232.498.5 0 .276-.215.5-.498.5H3.498A.504.504 0 0 1 3 10.5zm0 3c0-.276.215-.5.498-.5h4.004c.275 0 .498.232.498.5 0 .276-.215.5-.498.5H3.498A.504.504 0 0 1 3 13.5zm-1 3c0-.276.233-.5.503-.5h5.994c.278 0 .503.232.503.5 0 .276-.233.5-.503.5H2.503A.507.507 0 0 1 2 16.5zm1-12c0-.276.215-.5.498-.5h4.004c.275 0 .498.232.498.5 0 .276-.215.5-.498.5H3.498A.504.504 0 0 1 3 4.5zM9.5 4c-.303 0-.5.255-.5.5s.197.5.5.5H16v11l-3.5.044c-.328 0-.5.15-.5.456 0 .308.172.5.5.5H16c.497 0 1-.5 1-1V5c0-.5-.505-1-1-1H9.5zm4.5 6.604a.601.601 0 0 0-.596-.604H9.597a.602.602 0 0 0-.597.604v2.791c0 .333.269.605.597.605h3.807a.602.602 0 0 0 .596-.605v-2.79zM10 11h3v2h-3v-2z"
+														 id="Combined-Shape"></path>
+													</g>
+												</g>
+											</svg>
+										</label>
+										<span style="width: 25px; display: inline-block;"></span>
+										<label title="离线歌曲到手机">
+											<svg title="Title" viewBox="0 0 20 20" height="20" width="20" class="icon" style="vertical-align: middle;">
+												<desc>Icon</desc>
+												<g id="icon" fill="none" fill-rule="evenodd">
+													<g id="download" fill="#B9B9B9">
+														<g id="Group-16">
+															<path d="M12 14H1.845C1.378 14 1 14.447 1 15c0 .553.378 1 .845 1H12v-2z" id="Combined-Shape"></path>
+															<path d="M18.405 7h-4.812c-.32 0-.593.258-.593.56v8.88c0 .302.274.56.593.56h4.812c.32 0 .593-.258.593-.56V7.56c0-.302-.274-.56-.593-.56zm-.806 8.5h-3.09c-.291 0-.51-.26-.51-.561v-5.43c0-.303.219-.562.473-.509h3.054c.254-.053.472.206.472.508v5.43c0 .303-.145.562-.4.562z"
+															 id="Shape" transform="matrix(1 0 0 -1 0 24)"></path>
+															<path d="M7 10.9v-8c0-.497.449-.9 1-.9.552 0 1 .403 1 .9v8c0 .498-.448.901-1 .901-.551 0-1-.403-1-.901z"
+															 id="Fill-36"></path>
+															<path d="M12 8.298l-4 2.805L2.375 7.16a.88.88 0 0 0-1.213.197.84.84 0 0 0 .2 1.186l6.131 4.298a.884.884 0 0 0 1.013 0L12 10.39V8.299z"
+															 id="Combined-Shape"></path>
+														</g>
+													</g>
+												</g>
+											</svg>
+										</label>
+										<span style="width: 25px; display: inline-block;"></span><label title="分享这首歌">
+											<svg title="Title" viewBox="0 0 20 20" height="20" width="20" class="icon" style="vertical-align: middle;">
+												<desc>Icon</desc>
+												<g id="icon" fill="none" fill-rule="evenodd">
+													<g id="share" fill="#B9B9B9">
+														<path d="M12.69 13.145L7.94 10.31A2.06 2.06 0 0 0 8 9.83a2.06 2.06 0 0 0-.06-.478l4.7-2.81a1.96 1.96 0 0 0 1.36.553c1.103 0 2-.918 2-2.048S15.103 3 14 3s-2 .918-2 2.048c0 .164.023.324.06.478l-4.7 2.81A1.96 1.96 0 0 0 6 7.783c-1.103 0-2 .918-2 2.048s.897 2.048 2 2.048a1.96 1.96 0 0 0 1.36-.553l4.75 2.837a1.977 1.977 0 0 0-.053.447c0 1.099.87 1.99 1.943 1.99s1.943-.891 1.943-1.99c0-1.1-.87-1.99-1.943-1.99a1.91 1.91 0 0 0-1.31.525z"
+														 id="Shape-3"></path>
+													</g>
+												</g>
+											</svg>
+										</label>
+									</div>
+								</div>
+							</div>
+							<!-- 歌曲进度条 -->
+							<div class="_3dc88PzjGniYgbqLSjQQcb playing-progress" style="position: absolute; top: 0px; left: 0px;"></div>
+							<!-- 功能按钮 -->
+							<div style="position: absolute; top: 59px; height: 16px; line-height: 1; width: 430px; x: 0px; y: 0px; transform: translate3d(0px, 0px, 0px) scale(1);">
+								<div>
+									<label title="加红心">
+										<svg viewBox="0,0,30,30" height="26" width="26" class="icon icon-heart" style="vertical-align: middle;">
+											<desc></desc>
+											<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<path d="M22,0 C18.9359565,0 16.5821582,1.72596986 15,3.5 C13.4530656,1.72596986 11.0993172,0 8,0 C3.7559698,0 0,3.9236383 0,9 C0,12.0105248 0.844640658,15.0729547 2.5,18 C6.88109125,25.6681877 15.0243286,28.9632358 15,29 C15.0243286,28.9631844 22.9314319,25.7540044 27.5,18 C29.1765036,15.1251042 30.0352238,12.2324468 30,9 C30.0352238,3.9236383 26.2791541,0 22,0 Z"
+												 id="b" fill="#4A4A4A"></path>
+											</g>
+										</svg>
+									</label>
+									<!-- 间隔 -->
+									<span style="width: 32px; display: inline-block;"></span>
+									<label title="不再播放">
+										<svg title="Title" viewBox="0,0,30,30" height="26" width="26" class="icon" style="vertical-align: middle;">
+											<desc>Icon</desc>
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<path d="M19.0000002,2.99518936 L25.5501576,2.99518936 C27.2676993,2.99518936 27.9974555,4.25794694 27.9974555,5.16641446 L27.9974556,7.00000017 L2,7.00000017 L2,5.07556186 C2,4.18983672 2.59870784,2.99518936 4.31630844,2.99518936 L11,2.99518936 L11,1.5 C11,0.5 11.5,0 12.5,0 L17.5,0 C18.5,0 18.9999997,0.5 19,1.5 L19.0000002,2.99518936 Z M4.23383579,27.9351249 C4.2446828,28.8186284 4.84627924,29.9939828 6.54778618,30 L23.4857474,30 C25.1313687,29.9939828 25.8684938,28.8317828 25.9256175,27.9351249 L27.4668952,8 L2.53056032,8 L4.23383579,27.9351249 Z M11,25 C10,25 10,24.5 10,24 L10,13 C10,12.5 10,12 11,12 C12,12 12,12.5 12,13 L12,24 C12,24.5 12,25 11,25 Z M19,25 C18,25 18,24.5 18,24 L18,13 C18,12.5 18,12 19,12 C20,12 20,12.5 20,13 L20,24 C20,24.5 20,25 19,25 Z"
+												 fill="#4A4A4A"></path>
+											</g>
+										</svg>
+									</label>
+									<div style="position: absolute; right: 0px; top: 2px;">
+										<label title="暂停">
+											<svg title="Title" viewBox="61 0 22 22" height="22" width="22" class="icon icon-pause" style="vertical-align: middle;">
+												<desc>Icon</desc>
+												<path d="M61,1.00246167 C61,0.448817378 61.4509752,0 61.990778,0 L66.009222,0 C66.5564136,0 67,0.43945834 67,1.00246167 L67,20.9975383 C67,21.5511826 66.5490248,22 66.009222,22 L61.990778,22 C61.4435864,22 61,21.5605417 61,20.9975383 L61,1.00246167 Z M77,1.00246167 C77,0.448817378 77.4509752,0 77.990778,0 L82.009222,0 C82.5564136,0 83,0.43945834 83,1.00246167 L83,20.9975383 C83,21.5511826 82.5490248,22 82.009222,22 L77.990778,22 C77.4435864,22 77,21.5605417 77,20.9975383 L77,1.00246167 Z"
+												 stroke="none" fill="#4a4a4a" fill-rule="evenodd"></path>
+											</svg>
+										</label>
+										<span style="width: 60px; display: inline-block;"></span>
+										<label title="下一首">
+											<svg title="Title" viewBox="0,0,30,30" height="22" width="22" class="icon" style="vertical-align: middle;">
+												<desc>Icon</desc>
+												<g id="Page-1" fill="none" fill-rule="evenodd">
+													<g id="Fill-1-Copy-8-+-Path-Copy-6-+-Oval-3-Copy-2" fill="#4A4A4A">
+														<path d="M4.722 1.347l18.973 12.148c1.497.828 1.497 2.182 0 3.01L4.722 28.653C3.225 29.48 2 28.778 2 27.09V2.91C2 1.22 3.225.52 4.722 1.346zM25 28.5c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z"
+														 id="Fill-1-Copy-8"></path>
+														<path id="Path-Copy-6" d="M23 4h4v22.5h-4z"></path>
+														<path d="M25 6c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" id="Oval-3-Copy-2"></path>
+													</g>
+												</g>
+											</svg>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="right" style="width: 240px; height: 240px; top: 50%; margin-top: -90px; position: absolute; left: 50%; margin-left: 255px; transform: scale(1); opacity: 1;">
+							<div class="playing-cover" style="width: 240px; height: 240px;">
+								<!-- <img alt="查看专辑信息" width="0" height="0" src="./fm_files/s4707059.jpg"> 有可能拿来做交互 -->
+								<div class="cover mateacher" style="width: 240px; height: 240px; opacity: 1; border-radius: 50%; background-image: url(img/mat.jpg);background-repeat:no-repeat;background-size: auto 100%;"></div>
+								<span class="hover-tip">查看专辑信息</span>
+							</div>
+						</div>
+					</div>
+					<div class="tips" style="position: absolute; top: 50%; margin-top: 180px; left: 50%; margin-left: -220px;">
+						<div style="height: 30px;"></div>
+						<div style="height: 36px; line-height: 36px; border-radius: 2px; background-color: rgb(231, 231, 231); display: inline-block; padding: 0px 12px; color: rgb(74, 74, 74); font-size: 13px; font-weight: 500;"><a
+							 href="" style="color: rgb(47, 152, 66);">登录</a> /
+							<a href="" style="color: rgb(47, 152, 66);">注册</a>
+							后豆瓣FM将永久保留你的
+
+							收听历史与喜好
+						</div>
+					</div>
+					<!-- 向上收回按钮 -->
+					<a class="q7sVUCVH_o9AZe1H03951" style="position: absolute; top: 551px; z-index: 1000;">
+						<svg class="icon " width="18" height="18" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg"
+						 style="transform: rotate(180deg); top: -2px;">
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<path d="M13.8074785,10.809253 C14.0641738,11.0815536 14.0641738,11.5228421 13.8074785,11.7958146 C13.5501613,12.0680618 13.1339704,12.0680618 12.8766432,11.7958146 L9.00000502,7.68466501 L5.12270484,11.7958146 C4.86599947,12.0680618 4.44920681,12.0680618 4.19249141,11.7958146 C3.9358362,11.5228421 3.9358362,11.0815536 4.19249141,10.809253 L8.53426641,6.20422541 C8.79158361,5.93192486 9.20776444,5.93192486 9.46510169,6.20422541 L13.8074785,10.809253 Z"
+								 id="Shape" fill="#6bbd7a" transform="translate(9.000000, 9.000000) scale(1, -1) translate(-9.000000, -9.000000)"></path>
+							</g>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<!-- 内容 -->
+			<div class="explore" style="margin-top: 0px;">
+				<div class=" section-switcher section-switcher-explore">
+					<div class="section-header">
+						<!-- ui li都有样式设置 -->
+						<ul class="">
+							<li>
+								<a href="">
+									<svg title="Title" viewBox="0 0 23 23" height="23" width="23" class="icon" style="vertical-align: top;">
+										<g id="icon" fill="none" fill-rule="evenodd">
+											<g id="924_radio-copy-2" transform="translate(4 -1)">
+												<g id="Layer_1">
+													<g id="Group">
+														<path d="M15 18.815c0 .962-.207 1.185-1.106 1.185H1.106C.21 20 0 19.777 0 18.815v-8.628C0 9.223.21 9 1.106 9h12.788C14.793 9 15 9.223 15 10.187v8.628z"
+														 id="Shape" stroke="#979797"></path>
+														<ellipse id="Oval" stroke="#979797" cx="8.712" cy="5.644" rx=".36" ry=".36"></ellipse>
+														<path d="M2.848 9l5.754-3.31M8.292 3.08a2.251 2.251 0 0 1 2.928 3.04M9.604 11.688a2.839 2.839 0 0 0-1.588 5.193M11.49 12.404a2.839 2.839 0 0 1-1.884 4.963"
+														 id="Shape" stroke="#979797"></path>
+													</g>
+												</g>
+											</g>
+										</g>
+									</svg>
+									兆赫
+								</a>
+							</li>
+
+
+							<li>
+								<a href="">
+									<svg title="Title" viewBox="0 0 23 23" height="23" width="23" class="icon" style="vertical-align: top;">
+										<g id="icon" fill="none" fill-rule="evenodd">
+											<g id="1205_cd-copy" transform="rotate(-90 11.75 8.75)" stroke="#979797">
+												<g id="Layer_1">
+													<g id="Group">
+														<path d="M7.334 15.793v-4.778M10.61 9.688l3.938 3.05" id="Shape"></path>
+														<path d="M8.25 15.984a7.724 7.724 0 0 0 6.291-3.234 7.734 7.734 0 1 0-6.291 3.234z" id="Oval"></path>
+														<ellipse id="Oval" cx="8.25" cy="8.25" rx="1.017" ry="1.017"></ellipse>
+														<circle id="Oval" cx="8.25" cy="8.25" r="2.765"></circle>
+													</g>
+												</g>
+											</g>
+										</g>
+									</svg>
+									歌单
+								</a>
+							</li>
+
+
+							<li class="">
+								<a href=""><svg title="Title" viewBox="0 0 23 23" height="23" width="23" class="icon" style="vertical-align: top;">
+										<g id="icon" fill="none" fill-rule="evenodd">
+											<path d="M15 5c-1.532 0-2.71.863-3.5 1.75C10.726 5.863 9.55 5 8 5 5.878 5 4 6.962 4 9.5c0 1.505.422 3.036 1.25 4.5 2.19 3.834 6.262 5.481 6.25 5.5-.012.018 3.965-1.623 6.25-5.5.838-1.438 1.267-2.884 1.25-4.5.017-2.538-1.86-4.5-4-4.5z"
+											 id="Imported-Layers-Copy-5" stroke="#979797"></path>
+										</g>
+									</svg>
+									我的
+								</a>
+							</li>
+
+							<li class="">
+								<a href="">
+									<svg title="Title" viewBox="0 0 23 23" height="23" width="23" class="icon" style="vertical-align: top;">
+										<g id="icon" fill="none" fill-rule="evenodd">
+											<g id="Page-1" transform="matrix(-1 0 0 1 19.469 4)">
+												<path d="M8.004 1.023c-.17 0 .66.007-.51.022a5.685 5.685 0 0 0-3.897 2.048 5.797 5.797 0 0 0-1.321 4.23 5.775 5.775 0 0 0 2.028 3.935 5.669 5.669 0 0 0 4.19 1.334 5.688 5.688 0 0 0 3.897-2.048 5.798 5.798 0 0 0 1.321-4.231 5.778 5.778 0 0 0-2.028-3.934 5.666 5.666 0 0 0-3.68-1.356m-.021 12.614a6.663 6.663 0 0 1-4.33-1.596 6.793 6.793 0 0 1-2.386-4.629 6.817 6.817 0 0 1 1.554-4.976A6.688 6.688 0 0 1 7.405.026a6.663 6.663 0 0 1 4.93 1.57 6.793 6.793 0 0 1 2.386 4.628 6.817 6.817 0 0 1-1.554 4.977 6.69 6.69 0 0 1-5.184 2.436"
+												 id="Fill-1" fill="#979797"></path>
+												<g id="Group-5" transform="translate(0 11.226)">
+													<path d="M.506 5.113a.504.504 0 0 1-.325-.12.515.515 0 0 1-.063-.72L3.374.356a.503.503 0 0 1 .714-.062.514.514 0 0 1 .062.72L.895 4.93a.505.505 0 0 1-.389.182"
+													 id="Fill-3" fill="#979797" mask="url(#mask-2)"></path>
+												</g>
+											</g>
+										</g>
+									</svg>
+									搜索
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- 金色字体 -->
+					<div style="position: static; height: 100px; overflow: hidden;">
+						<p style="text-align: center;">
+							<a href="" target="_blank" style="font-size: 12px; font-weight: normal; text-align: center; color: rgb(151, 126, 66);">一键购买豆瓣FM
+								PRO，高音质无广告 ➝
+							</a>
+						</p>
+					</div>
+					
+					<div class="container" style="width: 1025px;" >
+						<div class="channels-block undefined">
+							<h3 class="title" style="position: relative;">
+								<span>从艺术家出发</span>
+							</h3>
+							<ul>
+								<li class="channel channel-rounded">
+									<div class="cover " style="height: 108px; width: 108px; background-image: url(img/gai.jpg); border-radius: 50%; display: inline-block;">
+									</div>
+									<div><a class="link title" title="方言 系">歪嘴 系</a>
+										<p class="subtitle">Gai 及其相似艺术家们</p>
+									</div>
+								</li>
+								<li class="channel channel-rounded">
+									<div class="cover " style="height: 108px; width: 108px; background-image: url(img/pgone.jpg); border-radius: 50%; display: inline-block;">
+									</div>
+									<div><a class="link title" title="偷饺子 系">烫头发 系</a>
+										<p class="subtitle">PGone 及其相似艺术家们</p>
+									</div>
+								</li><li class="channel channel-rounded">
+									<div class="cover " style="height: 108px; width: 108px; background-image: url(img/giao.jpg); border-radius: 50%; display: inline-block;">
+									</div>
+									<div><a class="link title" title="giao 系">萌Giao 系</a>
+										<p class="subtitle">Giao 及其相似艺术家们</p>
+									</div>
+								</li><li class="channel channel-rounded">
+									<div class="cover " style="height: 108px; width: 108px; background-image: url(img/TT.jpg); border-radius: 50%; display: inline-block;">
+									</div>
+									<div><a class="link title" title="tt系">你拱咩啊 系</a>
+										<p class="subtitle">T&nbsp;T 及其相似艺术家们</p>
+									</div>
+								</li><li class="channel channel-rounded">
+									<div class="cover " style="height: 108px; width: 108px; background-image: url(img/disico.jpg); border-radius: 50%; display: inline-block;">
+									</div>
+									<div><a class="link title" title="郭富城 系">郭富城 系</a>
+										<p class="subtitle">老舅 及其相似艺术家们</p>
+									</div>
+								</li>
+							</ul>
+							<div class=""><button class=" button-more">加载更多兆赫</button></div>
+							<div class="clear"></div>
+						</div>
+						<div></div>
+						<div class="channels-block text-channels">
+							<h3>心情 / 场景</h3>
+							<ul>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/153" class="title">
+										<!-- react-text: 1005 -->工作学习
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/151" class="title">
+										<!-- react-text: 1009 -->户外
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/152" class="title">
+										<!-- react-text: 1013 -->休息
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/154" class="title">
+										<!-- react-text: 1017 -->亢奋
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/155" class="title">
+										<!-- react-text: 1021 -->舒缓
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/77" class="title">
+										<!-- react-text: 1025 -->Easy
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/32" class="title">
+										<!-- react-text: 1029 -->咖啡
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/257" class="title">
+										<!-- react-text: 1033 -->运动
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+							</ul>
+							<div class="clear"></div>
+						</div>
+						<div class="channels-block text-channels">
+							<h3>语言 / 年代</h3>
+							<ul>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/1" class="title">
+										<!-- react-text: 1041 -->华语
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/2" class="title">
+										<!-- react-text: 1045 -->欧美
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/3" class="title">
+										<!-- react-text: 1049 -->七零
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/4" class="title">
+										<!-- react-text: 1053 -->八零
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/5" class="title">
+										<!-- react-text: 1057 -->九零
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/6" class="title">
+										<!-- react-text: 1061 -->粤语
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/17" class="title">
+										<!-- react-text: 1065 -->日语
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/18" class="title">
+										<!-- react-text: 1069 -->韩语
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/22" class="title">
+										<!-- react-text: 1073 -->法语
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+								<li class="channel channel-text"><a href="https://douban.fm/#/channel/61" class="title">
+										<!-- react-text: 1077 -->新歌
+										<!-- /react-text --><span class="mhz">MHz</span></a></li>
+							</ul>
+							<div class="clear"></div>
+						</div>
+						
+						<div></div>
+					</div>
+					<div class="_3DYFBb6aiu160iAo00Uo4D">
+						<p class="_1CLH3mOUWOTNQIed5FwSQW">
+							©
+							
+							2020
+							
+							 douban
+							<a class="link" title="京ICP备11027288号 ">京ICP备11027288号 </a>
+							网络视听许可证0110418号
+							京公网安备110105012274
+							<a class="link" title="新出发京批字第直150126号">新出发京批字第直150126号</a></p>
+						<p class="en5lC4BZFKw6hFoQJkM4H">
+							违法和不良信息举报 电话：17610209667 邮箱：
+							<a class="link" title="kefu@dnvgroup.cn">kefu@dnvgroup.cn</a>
+						</p>
+						<p class="en5lC4BZFKw6hFoQJkM4H">
+							<span>
+								广告合作:
+							<a class="link" title="adfm@douban.com">adfm@douban.com</a>
+							</span>
+							<span> | </span>
+							<a class="link" title="FM用户手册">FM用户手册</a>
+							<span> | </span>
+							<a href="">新版说明</a>
+							<span> | </span>
+							<a href="">我要反馈</a>
+							<span> | </span>
+							<a class="link" title="豆瓣FM中心">豆瓣FM中心</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

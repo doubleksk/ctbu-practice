@@ -1,0 +1,202 @@
+<!--pages/answer/answer.wxml-->
+<!-- <text>pages/answer/answer.wxml</text> -->
+<view class="banner">
+  <image class="banner_img" src="../img/banner.png"></image>
+  <view class="on">
+    <view class="text">
+      <view class="text_item">
+        <view><text>院校位置</text></view>
+        <view class="arrow"></view>
+      </view>
+      <view class="text_item">
+        <view><text>报考热度</text></view>
+        <view class="arrow"></view>
+      </view>
+      <view class="text_item">
+        <view><text>院校层次</text></view>
+        <view class="arrow"></view>
+      </view>
+      <view class="text_item">
+        <view><text>全部类型</text></view>
+        <view class="arrow"></view>
+      </view>
+    </view>
+    <view class="search_item">
+      <view class="search">
+        <image class="search_img" src="../img/search.png"></image>
+        <text style="color:#f4f4f4;">输入院校关键词搜索</text>
+        <view class="search_btn">
+          <text style="color:white;font-size:14px;">查询</text>
+        </view>
+      </view>
+      <view class="search_btn1">
+        <text style="color:white;font-size:14px;">重置</text>
+      </view>
+    </view> 
+  </view>
+</view>
+
+<!-- 中部 -->
+<view class="center">
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo1.jpg"></image>
+      <text class="info_text">齐鲁工业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo2.jpg"></image>
+      <text class="info_text">青岛科技大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo3.jpg"></image>
+      <text class="info_text">青岛理工大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo4.jpg"></image>
+      <text class="info_text">曲阜师范大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo5.jpg"></image>
+      <text class="info_text">烟台大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+
+  <view class="school">
+    <view class="school_info">
+      <image class="info_img" src="../img/logo6.jpg"></image>
+      <text class="info_text">青岛农业大学</text>
+    </view>
+    <view class="school_consult">
+      <image class="consult_img" src="../img/server.png"></image>
+      <text class="consult_text">在线咨询</text>
+    </view>
+  </view>
+</view>
+<view class="bottom">
+  <view class="gotop">
+    <image class="gotop_img" src="../img/gotop.png"></image>
+  </view>
+  <view class="req">
+    <text class="req_text">申请开通</text>
+  </view>
+</view>

@@ -1,0 +1,156 @@
+<!--pages/home/home.wxml-->
+<view class="banner">
+  <view class="top">
+    <view class="address">
+      <text>重庆</text>
+      <image class="address_img" src="../img/address.png"></image>
+    </view>
+    <view class="search">
+      <image class="search_img" src="../img/search.png"></image>
+      <text>搜索学校</text>
+    </view>
+  </view>
+  <swiper bindchange="swiperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+		<block wx:for="{{background}}" wx:key="*this">
+			<swiper-item>
+				<!-- <image src="{view
+            {item}}"></image> -->
+				<view style="background-image:url({{item}});background-size:cover;height:100%;width:100%"></view>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="dots">
+		<block wx:for="{{background}}" wx:key="*this">
+			<view class="dot {{index==swiperCurrent?'active':''}}">
+			</view>
+		</block>
+	</view>
+  </view>
+  
+<!-- 中部菜单 -->
+<view class="nav">
+  <view class="row">
+    <navigator>
+      <view class="item">
+        <image src="../img/1.svg"></image>
+        <text>专业解读</text>
+      </view>
+    </navigator>
+
+    <navigator>
+      <view class="item">
+        <image src="../img/2.svg"></image>
+        <text>新高考选科</text>
+      </view>
+    </navigator>
+
+    <navigator>
+      <view class="item">
+        <image src="../img/3.svg"></image>
+        <text>招生计划</text>
+      </view>
+    </navigator>
+
+    <navigator url="../results/results">
+      <view class="item">
+        <image src="../img/4.png"></image>
+        <text>省控线查询</text>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="row">
+    <navigator>
+      <view class="item">
+        <image src="../img/5.svg"></image>
+        <text>查大学</text>
+      </view>
+    </navigator>
+
+    <navigator>
+      <view class="item">
+        <image src="../img/6.svg"></image>
+        <text>智能选大学</text>
+      </view>
+    </navigator>
+
+    <navigator url="../answer/answer">
+      <view class="item">
+        <image src="../img/7.png"></image>
+        <text>招办答疑</text>
+      </view>
+    </navigator>
+
+    <navigator>
+      <view class="item">
+        <image src="../img/8.svg"></image>
+        <text>AI填志愿</text>
+      </view>
+    </navigator>
+  </view>
+ 
+</view>
+<view class="s_banner">
+	<swiper bindchange="swiperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+		<block wx:for="{{sbanner}}" wx:key="*this">
+			<swiper-item>
+				<!-- <image src="{view
+            {item}}"></image> -->
+				<view style="background-image:url({{item}});background-size:contain;height:100%;width:100%"></view>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="dots">
+		<block wx:for="{{sbanner}}" wx:key="*this">
+			<view class="dot  {{index == swiperCurrent?'active':''}}"></view>
+		</block>
+	</view>
+</view>
+
+<view class="info">
+   <image class="left" src="../img/info1.jpg"></image>
+   <view class="right">
+      <image src="../img/info2.png"></image>
+      <image src="../img/info3.png"></image>
+   </view>
+</view>
+
+<view class="vidio">
+	<view class="row">
+		<view class="item">
+			<image src="../img/1.jpg"></image>
+			<text>山西大学物理电子工程学院.mp4</text>
+		</view>
+		<view class="item">
+			<image src="../img/2.jpg"></image>
+			<text>山西大学哲学社会学.mp4</text>
+		</view>
+	</view>
+	<view class="row">
+		<view class="item">
+			<image src="../img/3.jpg"></image>
+			<text>山西大学计算机与信息技术学院.mp4</text>
+		</view>
+		<view class="item">
+			<image src="../img/4.jpg"></image>
+			<text>山西大学初民学院.mp4</text>
+		</view>
+	</view>
+</view>
+
+<view class="version">
+	<view class="title">
+		高考头条
+		<view class="bn">></view>
+	</view>
+	<view class="txt">重庆电信职业学院2020年招生</view>
+	<view class="txt">疫情“大考”下，近半年考生认为高考成绩将保持正常</view>
+	<view class="txt">这有款“志愿填报神器”，可以测出你的录取概率！</view>
+	<view class="txt">中国教育在线&学习强国“最强高考助手”来了！</view>
+	<view class="txt">人民日报推荐的好学习！就业、深造有保障!</view>
+	<view class="txt">这些7月高考大事，一定要提前准备！</view>
+</view>
+
+<view class="last">
+	数据仅供参考，最终以高校与考试院公布为准！
+</view>

@@ -1,0 +1,47 @@
+<!--pages/results/results.wxml-->
+<view class="top">
+	<picker bindchange="bindPickerChange" value="{{index}}" range="{{arrayObj}}" range-key="{{'name'}}">
+		<view class="picker">
+			<text>省份：</text>
+			<input type="text" value="{{arrayObj[index].name}}"></input>
+		</view>
+	</picker>
+  <picker bindchange="bindSubChange" value="{{subIndex}}" range="{{subjects}}" range-key="{{'name'}}">
+		<view class="picker">
+			<text>科类：</text>
+			<input type="text" value="{{subjects[subIndex].name}}"></input>
+		</view>
+	</picker>
+  <picker bindchange="bindYearChange" value="{{yearIndex}}" range="{{yearArr}}">
+		<view class="picker">
+			<text>省份：</text>
+			<input type="text" value="{{yearArr[yearIndex]}}"></input>
+		</view>
+	</picker>
+</view>
+
+<view class="center">
+	<view class="title">
+		录取分数线
+	</view>
+	<view class="item">
+		<text>年份</text>
+		<text>批次</text>
+		<text>分数线</text>
+	</view>
+	<block wx:if="{{subjectsNull==null}}">
+	<view class="item" wx:for="{{info}}" wx:key="index">
+		<text>{{item.year}}</text>
+		<text>{{item.local_batch_name}}</text>
+		<text>{{item.average}}</text>
+	</view>
+	</block>
+	<block wx:else>
+		<view>{{subjectsNull}}</view>
+	</block>
+
+</view>
+
+<view class="bottom">
+	<text>数据仅供参考，最终以考试院公布为准！</text>
+</view>

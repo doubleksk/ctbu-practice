@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>豆瓣电影</title>
+		<style>
+			body{
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+		<link href="css/dbmovie1.css" type="text/css" rel="stylesheet" charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src=" https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js">   </script>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+	</head>
+	<body>
+		<div class="div1">
+			<ul>
+				<li ><a class="a">豆瓣</a></li>
+				<li ><a class="a">读书</a></li>
+				<li ><a class="a">电影</a></li>
+				<li ><a class="a">音乐</a></li>
+				<li ><a class="a">同城</a></li>
+				<li ><a class="a">小组</a></li>
+				<li ><a class="a">阅读</a></li>
+				<li ><a class="a">FM</a></li>
+				<li ><a class="a">时间</a></li>
+				<li ><a class="a">豆品</a></li>
+				
+			</ul>
+            <span style="float: right; margin-right: 20px;margin-top: 5px;"><a class="a" href="https://accounts.douban.com/passport/login?source=movie">登录/注册</a></span>
+		</div>
+		<div class="div2" style="float: left;">
+			<div style="height: 75px;">
+				<span style="font-size: 28px;float: left;margin-left: 250px;color: deepskyblue;padding-top: 10px;"><a >豆瓣电影</a></span> 
+			    <form method="post" style="padding-top: 15px;">
+			    	 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="search" name="name" 
+			    	 	placeholder="请输入你要搜索的内容..." 
+			    	 	onfocus="if(this.value == '请输入你要搜索的内容...'){this.value = ''}" 
+			    	 	onblur="if(this.value == ''){this.value = '请输入你要搜索的内容...'}" 
+			    	 	style="width: 400px;height: 35px;" />
+			    	<input type="button" class="btn btn-default" value="搜索" />
+			    </form>
+ 			</div>
+			<div >
+                <ul style="margin-left: 230px;">
+                     <li ><a class="a" style="color: cornflowerblue;">影讯&购票</a></li>
+				     <li ><a class="a" style="color: cornflowerblue;">选电影</a></li>
+				     <li ><a class="a" style="color: cornflowerblue;">电视剧</a></li>
+				     <li ><a class="a" style="color: cornflowerblue;">排行榜</a></li>
+				     <li ><a class="a" style="color: cornflowerblue;">分类</a></li>
+				     <li ><a class="a" style="color: cornflowerblue;">影评</a></li>
+				     <li ><a class="a" style="color: cornflowerblue;">2019年度榜单</a></li>
+				     <li ><a class="a" style="color: cornflowerblue;">2019书影音报告</a></li>
+                </ul>
+			
+				
+		    </div>
+		</div>
+		<img src="img/豆瓣.png" style="width: 150px;height: 100px;" />
+        <div class="div3">
+        	
+            <div style="width: 675px;height: 100%;float: left;">
+            	<!--轮播图1-->
+            	<div style="width: 675px;height: 320px;">
+            		<div style="width: 100%;height: 36px;">
+            			<span style="font-size: 20px;">正在热映</span>&nbsp;&nbsp;&nbsp;<span style="color: darkorchid;"><a>全部热映电影>></a></span>&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>即将上映>></a></span>
+  
+            		</div>
+            		<div style="width:100%; height:10px; border-top:1px solid #999; clear:both;">
+            			<br />
+            		</div>
+            		<div style="width: 100%;height: 270px;">
+            			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 100%;height: 100%;">
+  <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            </ol>
+ 
+  <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox" style="width: 100%;">
+                                <div class="item active">
+                                	<table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td title="asdfasdfsadf"><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/寻梦环游记.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/幸福敲门.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+
+                                </div>
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/寻梦环游记.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/幸福敲门.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/寻梦环游记.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/幸福敲门.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+ 
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/寻梦环游记.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/幸福敲门.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+ 
+                            </div>
+ 
+  <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+ 
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+ 
+                            </a>
+ 
+                        </div>
+            		</div>
+            	</div>
+            	<br />
+            	<br />
+ 
+            	<!--轮播图2-->
+            	<div style="height: 486px;">
+            		<div style="width: 100%;height: 36px;">
+            			<span style="font-size: 20px;">最近热门电影</span>&nbsp;&nbsp;&nbsp;<span style="color: darkorchid;"><a>热门</a></span>&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>最新</a></span>
+            			&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>华语</a></span>&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>欧美</a></span>&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>韩国</a></span>
+            			&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>日本</a></span>&nbsp;&nbsp;&nbsp;<span style="color: blue;float: right;margin-top: 5px;"><a>更多>></a></span>
+  
+            		</div>
+            		<div style="width:100%; height:10px; border-top:1px solid #999; clear:both;">
+            			<br />
+            		</div>
+            		<div style="width: 100%;height: 440px;">
+            			<div id="carousel-example-generic2" class="carousel slide" data-ride="carousel" style="width: 100%;height: 100%;">
+  <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            </ol>
+ 
+  <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox" style="width: 100%;">
+                                <div class="item active">
+                                	<table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/寻梦环游记.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/幸福敲门.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	        
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/幸福敲门.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/寻梦环游记.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	</table>
+
+                                </div>
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/1917.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/初恋这首歌.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/1917.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/初恋这首歌.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+ 
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/1917.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/初恋这首歌.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+ 
+                            </div>
+ 
+  <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+ 
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+ 
+                            </a>
+ 
+                        </div>
+            		</div>
+            	</div>
+            	<br />
+                <br />
+                <!--轮播图3-->
+            	<div style="height: 486px;">
+            		<div style="width: 100%;height: 36px;">
+            			<span style="font-size: 20px;">最近热门电视剧</span>&nbsp;&nbsp;&nbsp;<span style="color: darkorchid;"><a>热门</a></span>&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>最新</a></span>
+            			&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>华语</a></span>&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>欧美</a></span>&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>韩国</a></span>
+            			&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>日本</a></span>&nbsp;&nbsp;&nbsp;<span style="color: blue;float: right;margin-top: 5px;"><a>更多>></a></span>
+  
+            		</div>
+            		<div style="width:100%; height:10px; border-top:1px solid #999; clear:both;">
+            			<br />
+            		</div>
+            		<div style="width: 100%;height: 440px;">
+            			<div id="carousel-example-generic3" class="carousel slide" data-ride="carousel" style="width: 100%;height: 100%;">
+  <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            </ol>
+ 
+  <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox" style="width: 100%;">
+                                <div class="item active">
+                                	<table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/寻梦环游记.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/幸福敲门.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	        
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/幸福敲门.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/寻梦环游记.png" style="width: 130px; height: 220px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	</table>
+
+                                </div>
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/1917.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/初恋这首歌.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/1917.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/初恋这首歌.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+ 
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/疯狂动物城.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/抵达之谜.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/美人鱼.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/1917.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                			<td><img src="img/初恋这首歌.png" style="width: 130px; height: 230px; display: block; CURSOR: hand " ></td>
+                                		</tr>
+                                	
+                                		<tr>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                			<td style="text-align: center;"><img src="img/购票.png" style="width: 80px;height: 20px;display:inline-block;"></td>
+                                		</tr>
+                                	</table>
+                                </div>
+ 
+                            </div>
+ 
+  <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic3" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+ 
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic3" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+ 
+                            </a>
+ 
+                        </div>
+            		</div>
+            	</div>
+            	<br />
+            	<br />
+            	<!--轮播图4-->
+            	<div style="height: 280px;">
+            		<div style="width: 100%;height: 30px;">
+            			<span style="font-size: 20px;">热门推荐</span>
+  
+            		</div>
+            		<div style="width:100%; height:10px; border-top:1px solid #999; clear:both;">
+            			<br />
+            		</div>
+            		<div style="width: 100%;height: 240px;">
+            			<div id="carousel-example-generic4" class="carousel slide" data-ride="carousel" style="width: 100%;height: 100%;">
+  <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            </ol>
+ 
+  <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox" style="width: 100%;">
+                                <div class="item active">
+                                	<table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/1.png" style="width: 335px; height: 240px; display: block; CURSOR: hand " ></td>
+                                			<td>
+                                				<h2><a>神仙阵容！HBO新剧《无所作为》预告</a></h2>
+                                				<br />
+                                				<br />
+                                				<span>妮可·基德曼、休·格兰特主演，10月25日播出！</span>
+                                			</td>
+                                		</tr>      
+                                	</table>
+
+                                </div>
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/2.png" style="width: 335px; height: 240px; display: block; CURSOR: hand " ></td>
+                                			<td>
+                                				<h2><a>年度韩影《从邪恶中拯救我》预告</a></h2>
+                                				<br />
+                                				<br />
+                                				<span>黄政民&李政宰《新世界》后再次合作！8月5日韩国上映！</span>
+                                			</td>
+                                		</tr>      
+                                	</table>
+                                </div>
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/3.png" style="width: 335px; height: 240px; display: block; CURSOR: hand " ></td>
+                                			<td>
+                                				<h2><a>年度必看科幻片《灾星异变》预告</a></h2>
+                                				<br />
+                                				<br />
+                                				<span>著名导演雷德利·斯科特打造科幻新剧，9月3日上线！</span>
+                                			</td>
+                                		</tr>      
+                                	</table>
+                                </div>
+ 
+                                <div class="item">
+                                    <table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/4.png" style="width: 335px; height: 240px; display: block; CURSOR: hand " ></td>
+                                			<td>
+                                				<h2><a>《飞往疯人院》中字预告</a></h2>
+                                				<br />
+                                				<br />
+                                				<span>香蕉姐主演Netflix剧集《拉契特》9月18日一次性上线！</span>
+                                			</td>
+                                		</tr>      
+                                	</table>
+                                </div>
+ 
+                            </div>
+ 
+  <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic4" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+ 
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic4" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+ 
+                            </a>
+ 
+                        </div>
+            		</div>
+            	</div>
+            	<br />
+            	<br />
+            	<!--影评-->
+            	<div >
+            		<!--导航栏-->
+            		<div>
+            			<div style="width: 100%;height: 36px;">
+            			<span style="font-size: 20px;">最受欢迎的影评</span>&nbsp;&nbsp;&nbsp;<span style="color: darkorchid;"><a>新片影评>></a></span>&nbsp;&nbsp;&nbsp;<span style="color: cornflowerblue;"><a>更多热门影评>></a></span>
+  
+            		</div>
+            		<div style="width:100%; height:10px; border-top:1px solid #999; clear:both;">
+            			<br />
+            		</div>
+            		</div>
+            		<!--影评1-->
+            	    <div>
+            	    	<table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/11.png" style="width: 80px; height: 100px; display: block; CURSOR: hand " ></td>
+                                			<td>
+                                				<h4><a>滨口龙介与他的三个创作母题：距离、对话与自我</a></h4>
+                                				<br />
+                                                <a>CMpunk</a> 评论 <a>《夜以继日》</a><img  src="img/星.png" />
+                                                <br />
+                                				<span>与滨口的相遇是在二零一九年的下半年，那时对于成都的独立策展还不甚了解，偶然看到了一条公众号推送，
+                                					仅冲着“戛纳“、”主竞赛”、“提名导演”洋洋洒洒几个惹眼球的大字，便进行了冲动的消费行为。 滨口是一个... </span>
+                                					<a>(全文)</a>
+                                			</td>
+                                		</tr>      
+                        </table>
+            	    </div>
+            	    <hr />
+            	    <!--影评2-->
+            	    <div>
+            	    	<table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/12.png" style="width: 80px; height: 100px; display: block; CURSOR: hand " ></td>
+                                			<td>
+                                				<h4><a>逃离真实的生活，逃入虚构的谎言</a></h4>
+                                				<br />
+                                                <a>phoebe</a> 评论 <a> 《逃走的女人》</a><img  src="img/星.png" />
+                                                <br />
+                                				<span>看似极松散的几个场景，有隐有现、半明半暗地讲了一个颇紧凑的故事。 表面上女主（金敏喜）是一个对婚姻极为满意、
+                                					好不容易从自己的幸福里抽身出来看朋友的女人。她连续三次，对三个不同的对象重复一段同样的话：... </span>
+                                					<a>(全文)</a>
+                                			</td>
+                                		</tr>      
+                        </table>
+            	    </div>
+            	    <hr />
+            	    <!--影评3-->
+            	    <div>
+            	    		<table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/13.png" style="width: 80px; height: 100px; display: block; CURSOR: hand " ></td>
+                                			<td>
+                                				<h4><a>抵达之谜</a></h4>
+                                				<br />
+                                                <a>^学ing•Q^</a> 评论 <a>《抵达之谜》</a><img  src="img/星.png" />
+                                                <br />
+                                				<span>《抵达之谜》这部电影确实好看，特别是李现扮演的赵小龙演技太棒啦！值得大家前往电影院一睹一个90后的风采！电影中的赵小龙被导演评价为“有魅力”的男生，但镜头外的李现却在片场“皮”出新高度，一边随时随地... </span>
+                                					<a>(全文)</a>
+                                			</td>
+                                		</tr>      
+                            </table>
+            	    </div>
+            	    <hr />
+            	    <!--影评 4-->
+            	    <div>
+            	    	<table style="table-layout: auto;">
+                                		<tr>
+                                			<td><img src="img/14.png" style="width: 80px; height: 100px; display: block; CURSOR: hand " ></td>
+                                			<td>
+                                				<h4><a>《资治通鉴》与《刺客聂隐娘》</a></h4>
+                                				<br />
+                                                <a>文若</a> 评论 <a> 《刺客聂隐娘》 </a><img  src="img/星.png" />
+                                                <br />
+                                				<span>唐宪宗于永贞元年八月受禅即皇帝位，时诸蕃骄横，天子乃削吴平蜀，目向河朔。 《资治通鉴》元和四年条： 成德节度使王士真薨，其子副大使承宗自为留后。河北三镇，相承各置副大使，以嫡长为之，父没则代领军务。 ... </span>
+                                					<a>(全文)</a>
+                                			</td>
+                                		</tr>      
+                        </table>
+            	    </div>
+            	</div>
+            </div>
+            
+			<div style="width: 400px;height: 100%;float: left;padding-left: 50px;">
+				<!--1-->
+				<div>
+					<table style="width: 100%;">
+						<tr >
+							<td style="background-color: lightblue;margin-left: 5px;height: 28px;"><a>豆瓣电影评分八问</a></td>
+						</tr>
+						<tr>
+							<td><img src="img/a.png" style="width: 300px;height: 300px;display: inline-block;" /></td>
+						</tr>
+					</table>
+				</div>
+				<br />
+				<!--2-->
+				<div>
+				    <div style="height: 20px;text-align: center;"><h5 style="float: left;margin: 0px;padding: 0px;">一周口碑榜</h5><a>更多榜单</a></div>
+				    <hr />
+				    <div>
+				    	<ol class="list1">
+				    	   <li><a>进击的巨人：编年史</a></li>
+				    	   <hr / style="margin: 7px;">
+				    	   <li><a>魔方高手</a></li>
+				    	   <hr / style="margin: 7px;">
+				    	   <li><a>剧场</a></li>
+				    	   <hr / style="margin: 7px;">
+				    	   <li><a>数码宝贝大冒险：最后的进化·羁绊</a></li>
+				    	   <hr / style="margin: 7px;">
+				    	   <li><a>父，子，兵</a></li>
+				    	   <hr / style="margin: 7px;">
+				    	   <li><a>最好的还未到来</a></li>
+				    	   <hr / style="margin: 7px;">
+				    	   <li><a>库布里克谈库布里克</a></li>
+				    	   <hr / style="margin: 7px;">
+				    	   <li><a>第一头牛</a></li>
+				           <hr / style="margin: 7px;">
+				    	   <li><a>叔·叔</a></li>
+				    	   <hr / style="margin: 7px;">
+				    	   <li><a>热血街区电影版：极恶王</a></li>
+				        </ol>
+				    </div>
+				</div>
+				<br />
+				<br />
+				<!--3-->
+				<div>
+					<img src="img/b.png" style="width: 300px;height: 235px;" />
+					<br />
+					<br />
+					<h4>热门豆列</h4>
+					<hr />
+					<a>深情即是一桩悲剧，必得以死来句读。</a><span style="color: darkgray;float: right;">16418推荐</span>
+					<hr />
+					<a>世界动画艺术大观【欧洲篇-上】</a><span style="color: darkgray;float: right;">128推荐</span>
+					<hr />
+				</div>
+				<!--4-->
+				<div>
+					<h4>合作联系</h4>
+					<hr />
+					<span>电影合作邮箱：movie@douban.com</span><br />
+					<span>电视剧合作邮箱：tv@douban.com  </span><br />
+					<span>豆瓣影人PRO合作邮箱：pro@douban.com</span><br /><br />
+					<h5>关注我们</h5>
+					<hr />
+					<table style="width: 100%;">
+						<tr>
+							<td><img src="img/c.png"/></td>
+							<td><img src="img/d.png"/></td>
+							<td><img src="img/e.png"/></td>
+							<td style="width: 20%;"><img src="img/f.png"/></td>
+							<td><img src="img/g.png"/></td>
+						</tr>
+						<tr>
+							<td><a>微博</a></td>
+							<td><a>微信</a></td>
+							<td><a>拌嘴</a></td>
+							<td><a>豆瓣影评人pro</a></td>
+							<td><a>观影club</a></td>
+						</tr>
+					</table>
+				</div>
+				<!--5-->
+				<div>
+					<table>
+						<tr>
+							<td>
+								<img src="img/i.png"/>
+							</td>
+							<td style="width: 5%;"></td>
+							<td>
+								<h4>首发《小阅读·日本经典文学》，和纸包书皮限量送</h4>
+								<span style="color: darkgray;">豆瓣书店</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		
+		</div>
+		<div style="width: 100%;text-align: center;">
+			<br /><br /><br /><br /><br /><hr />
+			<div style="float: left;margin-left: 250px;"><span style="color: darkgray;">© 2005－2020 douban.com, all rights reserved 北京豆网科技有限公司</span></div>
+			<div style="float: right;margin-right: 250px;">
+				<a>关于豆瓣</a> · 
+				<a>在豆瓣工作</a> · 
+				<a>联系我们</a> · 
+				<a>法律声明</a> · 
+				<a>帮助中心</a> · 
+				<a>移动应用</a> · 
+				<a>豆瓣广告</a> · 
+				
+			</div>
+		</div>
+	</body>
+</html>
